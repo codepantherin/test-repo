@@ -1,5 +1,5 @@
 import { initNavigation } from "./navigation.js";
-import { initScroll } from "./scroll.js";
+import { initScroll, initCardGlow } from "./scroll.js";
 import { renderProjects } from "./projects.js";
 import { initForm } from "./form.js";
 
@@ -9,8 +9,9 @@ if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 function init() {
   try {
     initNavigation();
-    initScroll();
     renderProjects();
+    initScroll();
+    initCardGlow();
     initForm();
   } catch (err) {
     console.error("[portfolio] initialization failed:", err);
