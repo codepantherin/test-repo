@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-surface;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6;
+  }
+
+  .section {
+    @apply py-20 md:py-28 scroll-mt-20;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight mb-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3
+           font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover;
+  }
+
+  .btn-ghost {
+    @apply btn border border-ink/15 text-ink hover:bg-ink/5;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white border border-ink/5 p-6 shadow-sm
+           transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .chip {
+    @apply inline-block rounded-full bg-accent/10 text-accent
+           px-3 py-1 text-xs font-medium;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-ink/70 hover:text-ink transition-colors;
+  }
+}
